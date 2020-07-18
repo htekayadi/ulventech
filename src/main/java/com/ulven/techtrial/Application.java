@@ -1,14 +1,13 @@
 package com.ulven.techtrial;
 
-import com.ulven.techtrial.util.RandomStringUtil;
-import com.ulven.techtrial.validator.InputValidator;
+import com.ulven.techtrial.service.StringGeneratorService;
 
 public class Application {
 
     public static void main(String[] args) {
-        int n = Integer.valueOf(args[0]);
+        StringGeneratorService stringGeneratorService = new StringGeneratorService();
 
-        InputValidator.validate(n);
-        RandomStringUtil.generate(n);
+        int n = Integer.valueOf(args[0]);
+        stringGeneratorService.generate(n);
     }
 }

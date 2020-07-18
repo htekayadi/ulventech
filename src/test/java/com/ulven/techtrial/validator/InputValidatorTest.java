@@ -1,7 +1,6 @@
-package validator;
+package com.ulven.techtrial.validator;
 
 import com.ulven.techtrial.exceptions.BadRequestException;
-import com.ulven.techtrial.validator.InputValidator;
 import org.junit.Test;
 
 import static org.junit.Assert.assertThrows;

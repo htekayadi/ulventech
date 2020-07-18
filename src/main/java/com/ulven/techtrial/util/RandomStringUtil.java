@@ -1,17 +1,11 @@
 package com.ulven.techtrial.util;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class RandomStringUtil {
 
     static int STRING_LENGTH = 100;
-    static String OUTPUT_PREFIX = "Output-";
-
-    static SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyyHHmmss");
 
     /**
      * Get alpha numeric string
@@ -49,7 +43,7 @@ public class RandomStringUtil {
      * Generate n lines consisting of unique alpha numeric characters
      * @param n The line number
      */
-    public static void generate(int n) {
+    public static Set<String> generate(int n) {
         Set<String> uniqueStrings = new HashSet<>();
         String newString;
 
@@ -60,10 +54,6 @@ public class RandomStringUtil {
                 i++;
             }
         }
-
-        FileUtil.write(
-                OUTPUT_PREFIX + sdf.format(new Date()),
-                uniqueStrings.stream().collect(Collectors.joining(System.lineSeparator()))
-        );
+        return uniqueStrings;
     }
 }
